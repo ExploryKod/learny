@@ -7,7 +7,7 @@
       <div class="app-header__content-texts">
         @if (quizIcon) {
           <span class="app-header__icon-badge" [ngClass]="iconBadgeClass" aria-hidden="true">
-            <img class="app-header__icon" [src]="quizIcon" [alt]="quizTitle" />
+            <img class="app-header__icon" [src]="quizIcon" alt="" />
           </span>
         }
         <h2 class="app-header__title">{{ quizTitle || 'Quiz' }}</h2>

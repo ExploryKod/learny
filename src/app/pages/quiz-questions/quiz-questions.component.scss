@@ -14,10 +14,16 @@
   &__intro {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 2rem;
+    column-gap: 2rem;
+    row-gap: 40px;
 
+    @include bp.media-breakpoint-up(md) {
+     row-gap: 64px;
+    }
+    
     @include bp.media-breakpoint-up(lg) {
       grid-template-columns: 1fr 1fr;
+      row-gap: 0;
       column-gap: var(--element-space-question-layout-column-gap);
     }
   }
@@ -56,10 +62,12 @@
     &--completed {
       @extend .quiz-text-xl;
       font-size: 36px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      align-items: baseline;
+      display: block;
+      line-height: 1.2;
+
+      .quiz-questions__title-part {
+        display: block;
+      }
     }
   }
 

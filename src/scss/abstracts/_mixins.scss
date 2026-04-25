@@ -152,8 +152,21 @@
 
   $desktop-size: map-get($text-sizes-xl-array, $size);
   $mobile-size: map-get($text-sizes-mobile-array, $size);
-  $vw-size: math.div(map-get($text-sizes-xl-array, $size) * 100, 1920);
+  // Use a realistic interpolation window so desktop size is reached on common laptop/tablet widths,
+  // not only near ultra-wide screens.
+  $min-vw: 375px;
+  $max-vw: 1024px;
+  $range-vw: math.div($max-vw - $min-vw, 1px);
+  $delta-size: $desktop-size - $mobile-size;
 
-  font-size: clamp(#{$mobile-size}px, #{$vw-size}vw, #{$desktop-size}px);
+  @if $delta-size == 0 {
+    font-size: #{$desktop-size}px;
+  } @else {
+    font-size: clamp(
+      #{$mobile-size}px,
+      calc(#{$mobile-size}px + #{$delta-size} * ((100vw - #{$min-vw}) / #{$range-vw})),
+      #{$desktop-size}px
+    );
+  }
 }
 

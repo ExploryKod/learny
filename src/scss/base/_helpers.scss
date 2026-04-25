@@ -19,7 +19,7 @@
 .hide-text {
   padding: 0; /* 1 */
   overflow: hidden;
-  text-indent: 101%;
+  text-indent: 180%;
   white-space: nowrap;
 }
 
@@ -53,12 +53,16 @@
 
 .skip-to-main {
   position: absolute;
+  top: 0.5rem;
+  left: 0.5rem;
   z-index: 9999;
-  background: hsl( var(--color-white) );
-  color: hsl( var(--color-dark) );
+  background-color: var(--white);
+  color: var(--blue-900);
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 500;
   padding: .5em 1em;
-  margin-inline: auto;
-  transform: translateY(-101%);
+  transform: translateY(-180%);
   transition: transform 250ms ease-in;
 }
 

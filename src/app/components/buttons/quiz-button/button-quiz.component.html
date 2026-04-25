@@ -6,7 +6,7 @@
     (click)="onButtonClick()">
     <div class="button-quiz__content">
       <span class="button-quiz__icon" [ngClass]="iconBadgeClass">
-        <img [src]="buttonQuiz.icon" [alt]="buttonQuiz.title" />
+        <img [src]="buttonQuiz.icon" alt="" aria-hidden="true" />
       </span>
       <span class="button-quiz__text">
         {{ buttonQuiz.title }}
