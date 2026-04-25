@@ -3,7 +3,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.2rem;
+  gap: var(--element-space-scorecard-header-score-gap);
   padding: 2.4rem;
   border-radius: 2.4rem;
   background-color: var(--element-button-quiz);

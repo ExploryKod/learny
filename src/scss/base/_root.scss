@@ -3,6 +3,15 @@
 // -----------------------------------------------------------------------------
 @use '../abstracts/variables' as *;
 @use '../abstracts/functions' as *;
+@use '../abstracts/responsive' as bp;
+
+@mixin emit-element-space-vars($token-map, $breakpoint: default) {
+  @each $token-name, $token-values in $token-map {
+    @if type-of($token-values) == 'map' and map-has-key($token-values, $breakpoint) {
+      --element-space-#{$token-name}: #{map-get($token-values, $breakpoint)};
+    }
+  }
+}
 
 :root {
   @each $state-color, $value in $state-colors {
@@ -26,17 +35,11 @@
     --nomotion: none;
   }
 
-  /* New set of spacing */
-  --spacing-100: 8px;
-  --spacing-200: 16px;
-  --spacing-300: 24px;
-  --spacing-400: 32px;
-  --spacing-500: 40px;
-  --spacing-600: 48px;
-  --spacing-800: 64px;
-  --spacing-1600: 128px;
-  --spacing-1800: 144px;
-  --spacing-2300: 184px;
+  @each $space-name, $value in $quiz-spaces {
+    --spacing-#{$space-name}: #{$value};
+  }
+
+  @include emit-element-space-vars($quiz-element-spaces, default);
 
   /* Font tokens mirrored from SCSS variables for easier browser inspection */
   --font-family: #{$font-family};
@@ -48,4 +51,14 @@
   --border-radius-header: 3rem;
 
   --scrollbarsize: 17px;
+}
+
+@each $breakpoint, $value in $grid-breakpoints {
+  @if $breakpoint != xs {
+    @include bp.media-breakpoint-up($breakpoint) {
+      :root {
+        @include emit-element-space-vars($quiz-element-spaces, $breakpoint);
+      }
+    }
+  }
 }

@@ -5,7 +5,7 @@
 
 .quiz-button-list {
   display: grid;
-  gap: 1rem;
+  gap: var(--element-space-welcome-quiz-list-gap);
   width: 100%;
 }
 

@@ -5,11 +5,21 @@
 }
 
 .quiz-options-list {
-  display: grid;
-  gap: 1rem;
   width: 100%;
+
+  &__answers {
+    display: grid;
+    row-gap: var(--element-space-question-options-gap);
+  }
+
+  &__submit-container {
+    display: flex;
+    width: 100%;
+  }
 
   &__submit-button {
    @extend .simple-button;
+   margin-top: var(--element-space-question-submit-margin-top);
+   width: 100%;
   }
 }

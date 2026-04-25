@@ -4,7 +4,7 @@
 
 .welcome-page {
   height: 100%;
-  padding: 5rem;
+  padding: 0 var(--element-space-layout-page-padding-x) var(--element-space-layout-page-padding-bottom);
   font-size: 1.6rem;
 
   &__intro {

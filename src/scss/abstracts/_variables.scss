@@ -75,6 +75,22 @@ $quiz-colors: (
   'red-500': #ee5454
 );
 
+$quiz-spaces: (
+  '100': 8px,
+  '200': 16px,
+  '300': 24px,
+  '400': 32px,
+  '500': 40px,
+  '600': 48px,
+  '800': 64px,
+  '1000': 80px,
+  '1200': 96px,
+  '1400': 112px,
+  '1600': 128px,
+  '1800': 144px,
+  '2300': 184px,
+);
+
 // Semantic/UI element colors exported as --color-* custom properties in :root
 $quiz-element-colors: (
   'quiz-box-shadow': rgba(0, 0, 0, 0.15) 0px 2px 8px,
@@ -96,6 +112,85 @@ $quiz-element-colors: (
   'success-border': #14a914,
   'primary-background': #a4a8c0,
   'cta-yellow': #e9bd43
+);
+
+$quiz-element-spaces: (
+  'layout-page-padding-x': (
+    default: map-get($quiz-spaces, '300'),
+    sm: map-get($quiz-spaces, '800'),
+    lg: map-get($quiz-spaces, '1800')
+  ),
+  'layout-page-padding-bottom': (
+    default: map-get($quiz-spaces, '1000')
+  ),
+  'header-padding-y': (
+    default: 56px,
+    sm: 47px,
+    lg: map-get($quiz-spaces, '1200')
+  ),
+  'header-padding-y-with-meta': (
+    default: 56px,
+    sm: 47px,
+    lg: 85px
+  ),
+  'header-margin-bottom': (
+    default: map-get($quiz-spaces, '200')
+  ),
+  'header-meta-gap': (
+    default: map-get($quiz-spaces, '200'),
+    sm: map-get($quiz-spaces, '300')
+  ),
+  'header-theme-gap': (
+    default: 0.75rem
+  ),
+  'welcome-intro-gap': (
+    default: map-get($quiz-spaces, '400')
+  ),
+  'welcome-intro-column-gap': (
+    default: map-get($quiz-spaces, '400'),
+    lg: map-get($quiz-spaces, '1000')
+  ),
+  'welcome-intro-row-gap': (
+    default: map-get($quiz-spaces, '200')
+  ),
+  'welcome-description-gap': (
+    default: map-get($quiz-spaces, '100')
+  ),
+  'welcome-quizzes-gap': (
+    default: map-get($quiz-spaces, '100')
+  ),
+  'welcome-submit-margin-top': (
+    default: 0.4rem
+  ),
+  'welcome-quiz-list-gap': (
+    default: map-get($quiz-spaces, '200'),
+    sm: map-get($quiz-spaces, '300'),
+    lg: map-get($quiz-spaces, '200')
+  ),
+  'question-layout-column-gap': (
+    default: map-get($quiz-spaces, '400'),
+    lg: map-get($quiz-spaces, '1600')
+  ),
+  'question-number-title-gap': (
+    default: map-get($quiz-spaces, '200'),
+    sm: map-get($quiz-spaces, '300')
+  ),
+  'question-title-bottom-gap': (
+    default: map-get($quiz-spaces, '500'),
+    sm: map-get($quiz-spaces, '800')
+  ),
+  'question-options-gap': (
+    default: map-get($quiz-spaces, '200'),
+    sm: map-get($quiz-spaces, '300'),
+    lg: map-get($quiz-spaces, '200')
+  ),
+  'question-submit-margin-top': (
+    default: map-get($quiz-spaces, '200'),
+    sm: map-get($quiz-spaces, '400')
+  ),
+  'scorecard-header-score-gap': (
+    default: map-get($quiz-spaces, '500')
+  )
 );
 
 /*** Logos ***/
