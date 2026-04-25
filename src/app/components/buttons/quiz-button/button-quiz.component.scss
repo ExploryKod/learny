@@ -67,7 +67,7 @@
 
   &__text {
     @include mx.font-text(4, $fw-medium, 1);
-    color: var(--blue-900);
+    color: var(--element-main-text);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

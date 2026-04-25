@@ -1,0 +1,11 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/responsive' as bp;
+
+body.quiz-theme-dark {
+  --element-main-text: var(--white);
+  --element-text-muted: var(--blue-300);
+  --element-button-quiz: var(--blue-850);
+  --element-button-submit-text-color: var(--white);
+  --page-bg: var(--blue-900);
+}
