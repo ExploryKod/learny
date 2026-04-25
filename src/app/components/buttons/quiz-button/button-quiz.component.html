@@ -5,7 +5,7 @@
     [disabled]="hasActions"
     (click)="onButtonClick()">
     <div class="button-quiz__content">
-      <span class="button-quiz__icon">
+      <span class="button-quiz__icon" [ngClass]="iconBadgeClass">
         <img [src]="buttonQuiz.icon" [alt]="buttonQuiz.title" />
       </span>
       <span class="button-quiz__text">

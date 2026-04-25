@@ -34,6 +34,14 @@
   }
 }
 
+/// Registers a font family with local project assets.
+///
+/// @param {String} $font-path - Base path to the fonts directory.
+/// @param {String} $font-name - Font family name.
+/// @param {String} $file-name - Font file basename (without extension).
+/// @param {Number|String} $weight [normal] - CSS font-weight value.
+/// @param {String} $style [normal] - CSS font-style value.
+/// @param {String} $display [swap] - `font-display` strategy.
 @mixin font-face($font-path, $font-name, $file-name, $weight: normal, $style: normal, $display: swap) {
   @font-face {
     font-family: quote($font-name);
@@ -61,6 +69,9 @@
   speak: never;
 }
 
+/// Absolutely centers an element on one or both axes.
+///
+/// @param {String} $position - `vertical` | `horizontal` | `both`.
 @mixin center($position) {
   position: absolute;
 
@@ -106,6 +117,11 @@
   position: $pos;
 }
 
+/// Applies a gradient background.
+///
+/// @param {Color} $start-color - Gradient start color.
+/// @param {Color} $end-color - Gradient end color.
+/// @param {String} $orientation - `vertical` | `horizontal` | any other value for radial.
 @mixin gradient($start-color, $end-color, $orientation) {
   background: $start-color;
 
@@ -118,6 +134,18 @@
   }
 }
 
+/// Applies fluid typography from design-token maps.
+/// Uses `$text-sizes-mobile-array` and `$text-sizes-xl-array`
+/// to generate a `clamp()` font-size for mobile -> desktop scaling.
+///
+/// @param {Number} $size - Token index in typography maps (1..12).
+/// @param {Number|String} $weight [normal] - CSS font-weight value.
+/// @param {Number} $line-height [1.2] - Unitless line-height.
+///
+/// @example scss
+///   .title {
+///     @include font-text(2, $fw-medium, 1);
+///   }
 @mixin font-text($size, $weight: normal, $line-height: 1.2) {
   line-height: $line-height;
   font-weight: $weight;

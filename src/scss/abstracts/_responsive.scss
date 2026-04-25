@@ -67,6 +67,15 @@
 
 // Media of at least the minimum breakpoint width. No query for the smallest breakpoint.
 // Makes the @content apply to the given breakpoint and wider.
+/// Applies styles from a breakpoint and up (`min-width`).
+///
+/// @param {String} $name - Breakpoint key (e.g. `sm`, `md`, `lg`).
+/// @param {Map} $breakpoints [$grid-breakpoints] - Breakpoint map.
+///
+/// @example scss
+///   @include media-breakpoint-up(lg) {
+///     .card { padding: 2rem; }
+///   }
 @mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
   $min: breakpoint-min($name, $breakpoints);
 
@@ -81,6 +90,10 @@
 
 // Media of at most the maximum breakpoint width. No query for the largest breakpoint.
 // Makes the @content apply to the given breakpoint and narrower.
+/// Applies styles up to a breakpoint (`max-width`).
+///
+/// @param {String} $name - Breakpoint key.
+/// @param {Map} $breakpoints [$grid-breakpoints] - Breakpoint map.
 @mixin media-breakpoint-down($name, $breakpoints: $grid-breakpoints) {
   $max: breakpoint-max($name, $breakpoints);
 
@@ -95,6 +108,11 @@
 
 // Media that spans multiple breakpoint widths.
 // Makes the @content apply between the min and max breakpoints
+/// Applies styles between two breakpoints (inclusive range behavior via min/max queries).
+///
+/// @param {String} $lower - Lower breakpoint key.
+/// @param {String} $upper - Upper breakpoint key.
+/// @param {Map} $breakpoints [$grid-breakpoints] - Breakpoint map.
 @mixin media-breakpoint-between($lower, $upper, $breakpoints: $grid-breakpoints) {
   $min: breakpoint-min($lower, $breakpoints);
   $max: breakpoint-max($upper, $breakpoints);
@@ -117,6 +135,10 @@
 // Media between the breakpoint's minimum and maximum widths.
 // No minimum for the smallest breakpoint, and no maximum for the largest one.
 // Makes the @content apply only to the given breakpoint, not viewports any wider or narrower.
+/// Applies styles only for one breakpoint band.
+///
+/// @param {String} $name - Breakpoint key.
+/// @param {Map} $breakpoints [$grid-breakpoints] - Breakpoint map.
 @mixin media-breakpoint-only($name, $breakpoints: $grid-breakpoints) {
   $min: breakpoint-min($name, $breakpoints);
   $next: breakpoint-next($name, $breakpoints);

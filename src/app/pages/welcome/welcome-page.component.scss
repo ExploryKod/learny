@@ -34,14 +34,14 @@
   }
 
   &__title {
-    @include mx.font-text(2, $fw-light, 1);
+    @include mx.font-text(2, $fw-light, 1.2);
     color: var(--element-main-text);
     margin-bottom: 0.5rem;
   }
 
   &__end-title {
     white-space: nowrap;
-    @include mx.font-text(2, $fw-medium, 1);
+    @include mx.font-text(2, $fw-medium, 1.2);
     color: var(--element-main-text);
   }
 

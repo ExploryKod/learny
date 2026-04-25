@@ -2,7 +2,7 @@ export const en = {
   welcomePage: {
     pretitle: 'Welcome to the',
     title: 'Frontend Quiz!',
-    description: 'Pick subject to get started.',
+    description: 'Pick a subject to get started.',
     noQuizAvailable: 'No quiz available for now.',
   },
   quizQuestions: {

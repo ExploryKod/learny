@@ -52,4 +52,21 @@ export class ButtonQuizComponent {
   get hasActions(): boolean {
     return this.visibleActions.length > 0;
   }
+
+  get iconBadgeClass(): string {
+    const iconPath = this.buttonQuiz.icon.toLowerCase();
+    if (iconPath.includes('icon-html')) {
+      return 'button-quiz__icon--html';
+    }
+    if (iconPath.includes('icon-css')) {
+      return 'button-quiz__icon--css';
+    }
+    if (iconPath.includes('icon-js')) {
+      return 'button-quiz__icon--js';
+    }
+    if (iconPath.includes('icon-accessibility')) {
+      return 'button-quiz__icon--accessibility';
+    }
+    return 'button-quiz__icon--default';
+  }
 }
