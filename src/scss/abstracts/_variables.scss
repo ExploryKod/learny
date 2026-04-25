@@ -193,6 +193,13 @@ $quiz-element-spaces: (
     default: map-get($quiz-spaces, '200'),
     sm: map-get($quiz-spaces, '400')
   ),
+  'question-submit-feedback-gap': (
+    default: map-get($quiz-spaces, '200'),
+    sm: map-get($quiz-spaces, '400')
+  ),
+  'question-feedback-icon-gap': (
+    default: map-get($quiz-spaces, '100')
+  ),
   'scorecard-header-score-gap': (
     default: map-get($quiz-spaces, '500')
   )

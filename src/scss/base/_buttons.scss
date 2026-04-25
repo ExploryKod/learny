@@ -1,7 +1,7 @@
 
 
 .simple-button {
-    background-color: var(--element-button-submit-color);
+    background-color: color-mix(in srgb, var(--element-button-submit-color) 50%, #fff 50%);
     color: var(--element-button-submit-text-color);
     box-shadow: var(--element-quiz-box-shadow);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
@@ -13,8 +13,9 @@
     cursor: pointer;
 
     &:hover,
-    &:focus,
+    &:focus-visible,
     &:active {
+      background-color: var(--element-button-submit-color);
       box-shadow: rgba(0, 0, 0, 0.2) 0px 2.5px 8.5px;
       transform: translateY(-0.8px);
     }

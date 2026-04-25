@@ -16,6 +16,7 @@ export const fr = {
     scoreTitle: 'Votre score',
     playAgain: 'Rejouer',
     noAnswers: 'Aucune reponse disponible',
+    selectAnswerError: 'Veuillez choisir une reponse',
     notReadyYet:
       'Le quiz n’est pas pret : il doit contenir au moins 2 questions et chaque question doit avoir au moins 2 reponses.',
   },

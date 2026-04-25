@@ -1,4 +1,5 @@
 @use 'scss/base/buttons' as *;
+@use 'scss/base/typography' as *;
 :host {
   display: block;
   width: 100%;
@@ -21,5 +22,42 @@
    @extend .simple-button;
    margin-top: var(--element-space-question-submit-margin-top);
    width: 100%;
+  }
+
+  &__feedback {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    column-gap: var(--element-space-question-feedback-icon-gap);
+    margin-top: var(--element-space-question-submit-feedback-gap);
+
+    &--error {
+      color: var(--red-500);
+    }
+
+    &--warning {
+      color: var(--orange-400);
+    }
+  }
+
+  &__feedback-icon {
+    width: 2rem;
+    height: 2rem;
+    border: 2px solid currentColor;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  &__feedback-text {
+    @extend .quiz-text-xs;
+    color: inherit;
+    text-align: center;
   }
 }

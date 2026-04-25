@@ -19,9 +19,6 @@
       <button
         type="button"
         class="quiz-options-list__submit-button"
-        [disabled]="
-          isSubmitted || (!isSubmitted && !selectedAnswerTitle)
-        "
         (click)="onSubmitOrNext()"
       >
         @if (!isSubmitted) {
@@ -34,7 +31,6 @@
       <button
         type="button"
         class="quiz-options-list__submit-button"
-        [disabled]="!selectedAnswerTitle"
         (click)="onSubmitOrNext()"
       >
         {{
@@ -48,6 +44,19 @@
       </button>
     }
   </div>
+
+  @if (feedbackType && feedbackMessageKey) {
+    <div
+      class="quiz-options-list__feedback"
+      [class.quiz-options-list__feedback--error]="feedbackType === 'error'"
+      [class.quiz-options-list__feedback--warning]="feedbackType === 'warning'"
+      role="status"
+      aria-live="polite"
+    >
+      <span class="quiz-options-list__feedback-icon" aria-hidden="true">!</span>
+      <span class="quiz-options-list__feedback-text">{{ feedbackMessageKey | translate }}</span>
+    </div>
+  }
 </div>
 
 <ng-template #noAnswers>

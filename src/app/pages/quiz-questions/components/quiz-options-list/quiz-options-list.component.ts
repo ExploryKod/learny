@@ -45,6 +45,8 @@ export class QuizOptionsListComponent implements OnChanges {
   submittedAnswerTitle: string | null = null;
   isSubmitted = false;
   isAnswerCorrect = false;
+  feedbackType: 'error' | 'warning' | null = null;
+  feedbackMessageKey: string | null = null;
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['questionId'] && !changes['questionId'].firstChange) {
@@ -57,6 +59,7 @@ export class QuizOptionsListComponent implements OnChanges {
       return;
     }
     this.selectedAnswerTitle = answer.title;
+    this.clearFeedback();
     this.answerClick.emit(answer);
   }
 
@@ -73,6 +76,7 @@ export class QuizOptionsListComponent implements OnChanges {
       return;
     }
     if (!this.selectedAnswerTitle) {
+      this.showFeedback('error', 'quizQuestions.selectAnswerError');
       return;
     }
 
@@ -82,6 +86,7 @@ export class QuizOptionsListComponent implements OnChanges {
     this.isSubmitted = true;
     this.submittedAnswerTitle = this.selectedAnswerTitle;
     this.isAnswerCorrect = !!selected?.isCorrect;
+    this.clearFeedback();
     this.persistScoreIfCorrect();
   }
 
@@ -130,5 +135,16 @@ export class QuizOptionsListComponent implements OnChanges {
     this.submittedAnswerTitle = null;
     this.isSubmitted = false;
     this.isAnswerCorrect = false;
+    this.clearFeedback();
+  }
+
+  private showFeedback(type: 'error' | 'warning', messageKey: string) {
+    this.feedbackType = type;
+    this.feedbackMessageKey = messageKey;
+  }
+
+  private clearFeedback() {
+    this.feedbackType = null;
+    this.feedbackMessageKey = null;
   }
 }
