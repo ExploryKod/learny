@@ -24,6 +24,7 @@ body {
 
 /* Page-scoped background (body class is set at runtime in AppComponent). */
 body.page-home, body.page-join, body.page-my-quizzes, body.page-quiz-questions {
+  background-color: var(--grey-50);
   background-image: url('/assets/patterns/pattern-background-mobile-light.svg');
   background-repeat: no-repeat;
   background-position: center top;
