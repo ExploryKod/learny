@@ -93,14 +93,12 @@ export class QuizOptionsListComponent implements OnChanges {
   toButtonOption(answer: QuizAnswerOption, index: number): ButtonOptionInterface {
     return {
       title: answer.title,
-      icon: this.buildIndexIcon(index),
+      label: this.buildIndexLabel(index),
     };
   }
 
-  private buildIndexIcon(index: number): string {
-    const label = String.fromCharCode(65 + (index % 26));
-    const svg = `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='12' fill='#F0F1F5'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='Arial, sans-serif' font-size='34' font-weight='700' fill='#626C7F'>${label}</text></svg>`;
-    return `data:image/svg+xml;utf8,${encodeURIComponent(svg)}`;
+  private buildIndexLabel(index: number): string {
+    return String.fromCharCode(65 + (index % 26));
   }
 
   isSelected(answer: QuizAnswerOption): boolean {

@@ -1,5 +1,10 @@
+@use 'scss/abstracts/responsive' as bp;
+@use 'scss/abstracts/mixins' as mx;
+@use 'scss/abstracts/variables' as *;
+@use 'scss/base/typography' as *;
+
 .quiz-score-card {
-  min-height: 300px;
+  min-height: 242px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,6 +13,10 @@
   border-radius: 2.4rem;
   background-color: var(--element-button-quiz);
   box-shadow: rgba(0, 0, 0, 0.12) 0 2px 8px;
+
+  @include bp.media-breakpoint-up(sm) {
+    min-height: 388px;
+  }
 
   &__header {
     display: flex;
@@ -36,8 +45,24 @@
   }
 
   &__score-value {
-    font-size: clamp(100px, 20vw, 144px);
-    font-weight: 700;
+    @include mx.font-text(1, $fw-medium, 1);
     color: var(--blue-900);
+    text-align: center;
+  }
+
+  &__total {
+    @extend .quiz-title-sm;
+    color: var(--grey-500);
+    text-align: center;
+
+    // Tablet: Text Preset 5 Medium
+    @include bp.media-breakpoint-up(sm) {
+      @include mx.font-text(9, $fw-medium, 1.5);
+    }
+
+    // Desktop: Text Preset 5 Regular
+    @include bp.media-breakpoint-up(lg) {
+      @include mx.font-text(9, $fw-normal, 1.5);
+    }
   }
 }

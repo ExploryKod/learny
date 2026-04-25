@@ -1,4 +1,6 @@
 @use 'scss/abstracts/responsive' as bp;
+@use 'scss/abstracts/mixins' as mx;
+@use 'scss/abstracts/variables' as *;
 
 :host {
   display: block;
@@ -64,9 +66,8 @@
   }
 
   &__text {
-    font-size: clamp(20px, 5vw, 28px);
-    color: var(--element-text-dark);
-    font-weight: 500;
+    @include mx.font-text(4, $fw-medium, 1);
+    color: var(--blue-900);
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;

@@ -4,7 +4,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { MatIconModule } from '@angular/material/icon';
 
 export interface ButtonOptionInterface {
-  icon: string;
+  label: string;
   title: string;
 }
 @Component({
@@ -16,7 +16,7 @@ export interface ButtonOptionInterface {
 })
 export class ButtonOptionComponent {
   @Input() buttonOption: ButtonOptionInterface = {
-    icon: '',
+    label: '',
     title: '',
   };
   @Input() isSelected = false;
@@ -31,5 +31,15 @@ export class ButtonOptionComponent {
       return;
     }
     this.buttonClick.emit();
+  }
+
+  get statusIconSrc(): string | null {
+    if (this.isCorrect) {
+      return 'assets/icons/icon-correct.svg';
+    }
+    if (this.isIncorrect) {
+      return 'assets/icons/icon-incorrect.svg';
+    }
+    return null;
   }
 }

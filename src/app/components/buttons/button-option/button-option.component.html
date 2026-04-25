@@ -8,12 +8,15 @@
       [disabled]="disabled"
       (click)="onButtonClick()">
       <div class="button-option__content">
-        <span class="button-option__icon">
-          <img [src]="buttonOption.icon" [alt]="buttonOption.title" />
-        </span>
+        <span class="button-option__icon" aria-hidden="true">{{ buttonOption.label }}</span>
         <span class="button-option__text">
           {{ buttonOption.title }}
         </span>
       </div>
+      @if (statusIconSrc) {
+        <span class="button-option__status-icon" aria-hidden="true">
+          <img [src]="statusIconSrc" alt="" />
+        </span>
+      }
     </button>
   </div>

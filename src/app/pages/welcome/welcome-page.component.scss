@@ -1,4 +1,6 @@
 @use 'scss/abstracts/responsive' as bp;
+@use 'scss/abstracts/mixins' as mx;
+@use 'scss/abstracts/variables' as *;
 @use 'scss/base/typography' as typo;
 @use 'scss/base/buttons' as btn;
 
@@ -32,20 +34,26 @@
   }
 
   &__title {
-    @extend .quiz-title-lg;
-    font-weight: 400;
+    @include mx.font-text(2, $fw-light, 1);
+    color: var(--blue-900);
     margin-bottom: 0.5rem;
   }
 
   &__end-title {
     white-space: nowrap;
-    font-weight: 700;
+    @include mx.font-text(2, $fw-medium, 1);
+    color: var(--blue-900);
   }
 
   &__description {
-    @extend .quiz-text-md;
+    @include mx.font-text(9, $fw-normal, 1.5);
+    color: var(--grey-500);
     font-style: italic;
     margin: 0;
+
+    @include bp.media-breakpoint-up(sm) {
+      @include mx.font-text(6, $fw-normal, 1.5);
+    }
   }
 
   &__quizzes-wrapper {
