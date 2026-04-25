@@ -179,6 +179,11 @@ $quiz-element-spaces: (
     default: map-get($quiz-spaces, '500'),
     sm: map-get($quiz-spaces, '800')
   ),
+  'question-title-progress-gap': (
+    default: map-get($quiz-spaces, '300'),
+    sm: map-get($quiz-spaces, '500'),
+    lg: map-get($quiz-spaces, '2300')
+  ),
   'question-options-gap': (
     default: map-get($quiz-spaces, '200'),
     sm: map-get($quiz-spaces, '300'),

@@ -20,6 +20,12 @@
         <h1 class="quiz-questions__title">
           {{ currentQuestion?.title || ('quizQuestions.title' | translate) }}
         </h1>
+        <qzy-quiz-progress-bar
+          class="quiz-questions__progress"
+          [value]="completedQuestionCount"
+          [max]="questionCount"
+          [ariaLabel]="'Question progress'"
+        ></qzy-quiz-progress-bar>
       }
     </div>
 

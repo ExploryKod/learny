@@ -42,7 +42,7 @@
     font-size: clamp(3.2rem, 2.2vw, 4.4rem);
     font-weight: 700;
     line-height: 1.2;
-    margin-bottom: var(--element-space-question-title-bottom-gap);
+    margin-bottom: 0;
 
     &--completed {
       @extend .quiz-text-xl;
@@ -52,6 +52,10 @@
       gap: 0.8rem;
       align-items: baseline;
     }
+  }
+
+  &__progress {
+    margin-top: var(--element-space-question-title-progress-gap);
   }
 
   &__title-part {

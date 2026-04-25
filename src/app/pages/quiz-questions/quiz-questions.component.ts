@@ -10,12 +10,19 @@ import {
   QuizOptionsListComponent,
 } from './components/quiz-options-list/quiz-options-list.component';
 import { QuizScoreCardComponent } from './components/quiz-score-card/quiz-score-card.component';
+import { QuizProgressBarComponent } from './components/quiz-progress-bar/quiz-progress-bar.component';
 import { HeaderUiService } from '../../services/header-ui.service';
 
 @Component({
   selector: 'qzy-quiz-questions-page',
   standalone: true,
-  imports: [CommonModule, TranslateModule, QuizOptionsListComponent, QuizScoreCardComponent],
+  imports: [
+    CommonModule,
+    TranslateModule,
+    QuizOptionsListComponent,
+    QuizScoreCardComponent,
+    QuizProgressBarComponent,
+  ],
   templateUrl: './quiz-questions.components.html',
   styleUrl: './quiz-questions.component.scss',
 })
@@ -70,6 +77,17 @@ export class QuizQuestionsComponent implements OnInit, OnDestroy {
       return false;
     }
     return this.currentQuestionIndex === this.quiz.questions.length - 1;
+  }
+
+  get questionCount(): number {
+    return this.quiz?.questions?.length ?? 0;
+  }
+
+  get completedQuestionCount(): number {
+    if (!this.quiz?.questions?.length) {
+      return 0;
+    }
+    return Math.min(this.currentQuestionIndex, this.quiz.questions.length);
   }
 
   onAnswerClick(_answer: QuizAnswerOption) {
