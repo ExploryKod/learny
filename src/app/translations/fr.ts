@@ -7,6 +7,7 @@ export const fr = {
   },
   quizQuestions: {
     number: 'Question',
+    of: 'sur',
     title: 'Questionnaire',
     completedTitle: 'Quiz termine.',
     youScored: 'Votre score...',

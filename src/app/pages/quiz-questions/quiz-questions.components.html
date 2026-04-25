@@ -15,7 +15,9 @@
           <span class="quiz-questions__number-text">
             {{ 'quizQuestions.number' | translate }}
           </span>
-          {{ currentQuestionIndex + 1 }} / {{ quiz?.questions?.length || 0 }}
+          {{ currentQuestionIndex + 1 }}
+          {{ 'quizQuestions.of' | translate }}
+          {{ quiz?.questions?.length || 0 }}
         </div>
         <h1 class="quiz-questions__title">
           {{ currentQuestion?.title || ('quizQuestions.title' | translate) }}

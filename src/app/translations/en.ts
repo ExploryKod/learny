@@ -7,6 +7,7 @@ export const en = {
   },
   quizQuestions: {
     number: 'Question',
+    of: 'of',
     title: 'Quiz',
     completedTitle: 'Quiz completed.',
     youScored: 'You scored...',
