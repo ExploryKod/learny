@@ -19,4 +19,21 @@ export class AppHeaderComponent {
     const isChecked = (event.target as HTMLInputElement).checked;
     this.themeModeChange.emit(isChecked);
   }
+
+  get iconBadgeClass(): string {
+    const iconPath = this.quizIcon.toLowerCase();
+    if (iconPath.includes('icon-html')) {
+      return 'app-header__icon-badge--html';
+    }
+    if (iconPath.includes('icon-css')) {
+      return 'app-header__icon-badge--css';
+    }
+    if (iconPath.includes('icon-js')) {
+      return 'app-header__icon-badge--js';
+    }
+    if (iconPath.includes('icon-accessibility')) {
+      return 'app-header__icon-badge--accessibility';
+    }
+    return 'app-header__icon-badge--default';
+  }
 }

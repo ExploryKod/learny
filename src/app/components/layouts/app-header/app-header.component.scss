@@ -43,6 +43,33 @@
     flex-shrink: 0;
   }
 
+  &__icon-badge {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 0.8rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background-color: var(--element-header-icon-badge-default);
+
+    &--html {
+      background-color: var(--element-header-icon-badge-html);
+    }
+
+    &--css {
+      background-color: var(--element-header-icon-badge-css);
+    }
+
+    &--js {
+      background-color: var(--element-header-icon-badge-js);
+    }
+
+    &--accessibility {
+      background-color: var(--element-header-icon-badge-accessibility);
+    }
+  }
+
   &__content-theme-switch {
     display: inline-flex;
     align-items: center;
@@ -100,4 +127,8 @@
   &__switch-input:checked + &__switch-slider::before {
     transform: translateX(1.35rem);
   }
+}
+
+:host-context(.quiz-theme-dark) .app-header__icon-badge {
+  background-color: var(--white);
 }
