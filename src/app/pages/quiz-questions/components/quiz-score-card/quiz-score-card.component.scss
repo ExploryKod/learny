@@ -33,7 +33,7 @@
   &__header-title {
     font-size: 2rem;
     font-weight: 600;
-    color: var(--element-text-dark);
+    color: var(--element-main-text);
   }
 
   &__score-container {
@@ -46,13 +46,13 @@
 
   &__score-value {
     @include mx.font-text(1, $fw-medium, 1);
-    color: var(--blue-900);
+    color: var(--element-main-text);
     text-align: center;
   }
 
   &__total {
     @extend .quiz-title-sm;
-    color: var(--grey-500);
+    color: var(--element-text-muted);
     text-align: center;
 
     // Tablet: Text Preset 5 Medium

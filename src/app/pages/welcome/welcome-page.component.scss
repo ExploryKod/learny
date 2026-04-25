@@ -35,19 +35,19 @@
 
   &__title {
     @include mx.font-text(2, $fw-light, 1);
-    color: var(--blue-900);
+    color: var(--element-main-text);
     margin-bottom: 0.5rem;
   }
 
   &__end-title {
     white-space: nowrap;
     @include mx.font-text(2, $fw-medium, 1);
-    color: var(--blue-900);
+    color: var(--element-main-text);
   }
 
   &__description {
     @include mx.font-text(9, $fw-normal, 1.5);
-    color: var(--grey-500);
+    color: var(--element-text-muted);
     font-style: italic;
     margin: 0;
 

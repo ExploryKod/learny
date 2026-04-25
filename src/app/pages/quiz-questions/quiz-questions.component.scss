@@ -35,7 +35,7 @@
 
   &__number {
     @include mx.font-text(9, $fw-normal, 1.5);
-    color: var(--grey-500);
+    color: var(--element-text-muted);
     font-style: italic;
     margin: 0;
 
@@ -46,7 +46,7 @@
 
   &__title {
     @include mx.font-text(7, $fw-medium, 1.2);
-    color: var(--blue-900);
+    color: var(--element-main-text);
     margin-bottom: 0;
 
     @include bp.media-breakpoint-up(sm) {

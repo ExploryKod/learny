@@ -188,7 +188,7 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
 .quiz-title-sm {
   margin-top: 0;
   padding-top: 0;
-  color: var(--element-text-dark);
+  color: var(--element-main-text);
   font-family: $font-family-text;
 
   @include font-text(5, $fw-medium, 1);
