@@ -12,14 +12,18 @@
   &__intro {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    row-gap: 40px;
 
-    @include bp.media-breakpoint-up(lg) {
+    @include bp.media-breakpoint-up(md) {
+      row-gap: 64px;
+    }
+
+    @include bp.media-breakpoint-up(xl) {
       flex-direction: row;
       flex-wrap: wrap;
       align-items: flex-start;
       column-gap: 5rem;
-      row-gap: 1.6rem;
+      row-gap: 0;
     }
   }
 

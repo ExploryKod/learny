@@ -87,6 +87,7 @@ $quiz-spaces: (
   '1200': 96px,
   '1400': 112px,
   '1600': 128px,
+  '1700': 140px,
   '1800': 144px,
   '2300': 184px,
 );
@@ -124,7 +125,7 @@ $quiz-element-spaces: (
   'layout-page-padding-x': (
     default: map-get($quiz-spaces, '300'),
     sm: map-get($quiz-spaces, '800'),
-    lg: map-get($quiz-spaces, '1800')
+    lg: map-get($quiz-spaces, '1700')
   ),
   'layout-page-padding-bottom': (
     default: map-get($quiz-spaces, '1000')

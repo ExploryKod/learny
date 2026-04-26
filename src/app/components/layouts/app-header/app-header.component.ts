@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { isAppDefaultThemeDarkFromEnvironment } from '../../../theme/quiz-theme';
 
 @Component({
   selector: 'qzy-app-header',
@@ -12,7 +13,7 @@ export class AppHeaderComponent {
   @Input() showQuizMeta = true;
   @Input() quizTitle = '';
   @Input() quizIcon = 'assets/icons/icon-html.svg';
-  @Input() isDarkMode = false;
+  @Input() isDarkMode = isAppDefaultThemeDarkFromEnvironment();
   @Output() themeModeChange = new EventEmitter<boolean>();
 
   onToggle(event: Event): void {

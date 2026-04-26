@@ -1,3 +1,5 @@
+import type { AppDefaultTheme } from './app-default-theme';
+
 export const environment = {
   baseUrl: '/',
   apiUrl: '/api',
@@ -5,6 +7,7 @@ export const environment = {
   fakeUsersUrl: 'assets/data/user.json',
   useFakeApi: false,
   useFakeAuth: false,
+  defaultTheme: 'dark' satisfies AppDefaultTheme,
   authType: 'JWT', // 'JWT' or 'FIREBASE' - default to JWT
   // You will need to create a Firebase project and replace the configuration here with yours
   firebase : {

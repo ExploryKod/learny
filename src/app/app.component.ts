@@ -7,6 +7,11 @@ import { filter } from 'rxjs';
 import { en } from './translations/en';
 import { AppHeaderComponent } from './components/layouts/app-header/app-header.component';
 import { HeaderUiService } from './services/header-ui.service';
+import {
+  isDarkModeFromQuizThemeStorage,
+  persistQuizThemePreference,
+  setQuizThemeBodyClass,
+} from './theme/quiz-theme';
 
 @Component({
   standalone: true,
@@ -22,7 +27,7 @@ export class AppComponent {
   private readonly document = inject(DOCUMENT);
   private readonly headerUiService = inject(HeaderUiService);
   title = 'quizzy-front';
-  isDarkMode = false;
+  isDarkMode = isDarkModeFromQuizThemeStorage();
   showQuizMeta = false;
   bannerTitle = '';
   bannerIcon = '';
@@ -31,9 +36,6 @@ export class AppComponent {
     this.translateService.setDefaultLang('en');
     this.translateService.setTranslation('en', en);
     this.translateService.use('en');
-    this.isDarkMode = localStorage.getItem('quiz-theme') === 'dark';
-    this.applyThemeMode(this.isDarkMode);
-
     this.headerUiService.quizMeta$
       .pipe(takeUntilDestroyed(this.destroyRef))
       .subscribe((meta) => {
@@ -83,11 +85,7 @@ export class AppComponent {
 
   onThemeModeChange(isDarkMode: boolean): void {
     this.isDarkMode = isDarkMode;
-    localStorage.setItem('quiz-theme', isDarkMode ? 'dark' : 'light');
-    this.applyThemeMode(isDarkMode);
-  }
-
-  private applyThemeMode(isDarkMode: boolean): void {
-    this.document.body.classList.toggle('quiz-theme-dark', isDarkMode);
+    persistQuizThemePreference(isDarkMode);
+    setQuizThemeBodyClass(this.document.body, isDarkMode);
   }
 }
