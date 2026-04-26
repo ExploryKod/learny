@@ -12,7 +12,7 @@ document.body.addEventListener("click", function(e) {
 
 (function() {
     const fontSize = document.getElementById('fontSize'),
-        testDrive = document.getElementById('testDrive'),
+        testDrive = document.querySelector('.testDrive'),
         testText = document.getElementById('testText');
     function updateTest() {
         testDrive.innerHTML = testText.value || String.fromCharCode(160);

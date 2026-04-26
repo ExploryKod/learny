@@ -15,8 +15,10 @@
     &-#{$level} {
       $mobile-size: map-get($text-sizes-mobile-array, $level);
       $vw-size: math.div(map-get($text-sizes-xl-array, $level) * 100, 1920);
+      $min-rem: math.div($mobile-size, 16) * 1rem;
+      $max-rem: math.div($size, 16) * 1rem;
 
-      font-size: clamp($mobile-size * 1px, $vw-size * 1vw, $size * 1px);
+      font-size: clamp($min-rem, $vw-size * 1vw, $max-rem);
     }
   }
 }
@@ -485,15 +487,17 @@ a {
     }
   }
 
-  // Flat contact-link color (lg): one place, lower nesting / easier overrides than & .contact-link per pseudo
+  // Flat contact-link color (lg); :where() keeps specificity low (same visual as chained .quiz-text-link.pseudo)
   @include media-breakpoint-up(lg) {
-    &.quiz-text-link.contact-link,
-    &.quiz-text-link:link.contact-link,
-    &.quiz-text-link:visited.contact-link,
-    &.quiz-text-link:hover.contact-link,
-    &.quiz-text-link:focus.contact-link,
-    &.quiz-text-link:active.contact-link {
-      color: $quiz-neutral-bg;
+    &.quiz-text-link:where(.contact-link) {
+      &,
+      &:link,
+      &:visited,
+      &:hover,
+      &:focus,
+      &:active {
+        color: $quiz-neutral-bg;
+      }
     }
   }
 }

@@ -50,7 +50,8 @@ input:focus {
   padding-bottom: 1em;
   margin-right: 4em;
   margin-bottom: 1em;
-  float: left;
+  display: inline-block;
+  vertical-align: top;
   overflow: hidden;
 }
 .liga {
@@ -110,10 +111,14 @@ p {
   padding-top: .25em;
 }
 .unit {
-  float: left;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
 }
 .unitRight {
-  float: right;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
 }
 .size1of2 {
   width: 50%;
@@ -138,9 +143,9 @@ p {
   line-height: 1.5;
   height: 1.5em;
 }
-#testDrive {
+.testDrive {
   display: block;
-  padding-top: 24px;
+  padding-top: 1.5rem;
   line-height: 1.5;
 }
 .fs0 {

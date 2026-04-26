@@ -71,6 +71,10 @@
         color: var(--white);
       }
     }
+
+    @include bp.media-breakpoint-up(lg) {
+      min-width: 40rem;
+    }
   }
 
   &__content {
@@ -81,14 +85,8 @@
     flex: 1;
   }
 
-  @include bp.media-breakpoint-up(lg) {
-    &__main {
-      min-width: 40rem;
-    }
-  }
-
   &__icon {
-    margin-right: 32px;
+    margin-inline-end: 2rem;
     display: inline-flex;
     width: 3.2rem;
     height: 3.2rem;
