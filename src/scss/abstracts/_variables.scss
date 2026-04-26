@@ -26,32 +26,7 @@ $font-family-text: 'Rubik';
 
 /**** Colors - Defined by website design system ****/
 
-//general colors
-$quiz-neutral-bg: #ffffff;
-$quiz-dark-blue: #142cac;
-$quiz-dark-black: #000000;
-$quiz-medium-grey: #cccccc;
-$quiz-beige: #f4ece4;
-
-// text colors
-$quiz-title-blue: $quiz-dark-blue;
-$quiz-text-dark-color: $quiz-dark-black;
-$quiz-text-light-color: $quiz-neutral-bg;
-
-// btn colors
-$quiz-btn-color: $quiz-dark-blue;
-$quiz-btn-color-hover: $quiz-dark-black;
-$quiz-btn-bg-color: $quiz-neutral-bg;
-
-// semantic colors
-$state-colors: (
-  'danger': #dc3545,
-  'warning': #ffc107,
-  'info': #17a2b8,
-  'success': #28a745
-);
-
-// UI palette exported as CSS custom properties in :root
+// UI palette (hex values) — also exported as CSS custom properties in :root
 $quiz-colors: (
   'white': #ffffff,
   'black': #000000,
@@ -73,6 +48,31 @@ $quiz-colors: (
   'orange-50': #fff5ed,
   'orange-400': #ff7e35,
   'red-500': #ee5454
+);
+
+// general colors
+$quiz-neutral-bg: map-get($quiz-colors, 'white');
+$quiz-dark-blue: #142cac;
+$quiz-dark-black: #000000;
+$quiz-medium-grey: #cccccc;
+$quiz-beige: #f4ece4;
+
+// text colors
+$quiz-title-blue: $quiz-dark-blue;
+$quiz-text-dark-color: $quiz-dark-black;
+$quiz-text-light-color: $quiz-neutral-bg;
+
+// btn colors
+$quiz-btn-color: $quiz-dark-blue;
+$quiz-btn-color-hover: $quiz-dark-black;
+$quiz-btn-bg-color: $quiz-neutral-bg;
+
+// semantic colors
+$state-colors: (
+  'danger': #dc3545,
+  'warning': #ffc107,
+  'info': #17a2b8,
+  'success': #28a745
 );
 
 $quiz-spaces: (

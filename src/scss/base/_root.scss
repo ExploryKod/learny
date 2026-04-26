@@ -27,6 +27,9 @@
     --#{$color-name}: #{$value};
   }
 
+  // Semantic surface: same value as --white; use in new CSS for clarity / theming
+  --quiz-neutral-bg: var(--white);
+
   @each $color-name, $value in $quiz-element-colors {
     --element-#{$color-name}: #{$value};
   }

@@ -58,9 +58,9 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
 /*** quiz CUSTOM TITLES ***/
 // quiz-title-xl — Figma Preset 1 (display) · font-text level 1 · LH 100% · Rubik Medium default
 .quiz-title-xl {
-  margin-top: 0;
-  margin-bottom: $quiz-title-xl-mb;
-  padding-top: 0;
+  margin-block-start: 0;
+  margin-block-end: $quiz-title-xl-mb;
+  padding-block-start: 0;
   color: $quiz-dark-blue;
   font-family: $font-family-title;
 
@@ -94,7 +94,7 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
   .main {
     &__#{$class} {
       .quiz-title-xl {
-        margin-bottom: #{$value};
+        margin-block-end: #{$value};
       }
     }
   }
@@ -102,9 +102,9 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
 
 // quiz-title-lg — Figma Preset 2 Medium · font-text level 2 · LH 100%
 .quiz-title-lg {
-  margin-top: 0;
-  margin-bottom: $quiz-title-xl-mb;
-  padding-top: 0;
+  margin-block-start: 0;
+  margin-block-end: $quiz-title-xl-mb;
+  padding-block-start: 0;
   color: $quiz-dark-blue;
   font-family: $font-family-title;
 
@@ -136,12 +136,12 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
 @include media-breakpoint-down(lg) {
   .main {
     .quiz-title-xl {
-      margin-top: $max-lg-quiz-title-xl-mt-intro;
+      margin-block-start: $max-lg-quiz-title-xl-mt-intro;
     }
   }
   .legal, .confidentiality {
     .quiz-title-lg {
-      margin-top: $max-lg-quiz-title-lg-mt-legal;
+      margin-block-start: $max-lg-quiz-title-lg-mt-legal;
     }
   }
 }
@@ -149,7 +149,7 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
 @include media-breakpoint-up(lg) {
   .legal,  .confidentiality {
     .quiz-title-lg {
-      margin-top: $lg-quiz-title-lg-mt-legal;
+      margin-block-start: $lg-quiz-title-lg-mt-legal;
     }
   }
 }
@@ -158,9 +158,9 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
 
 // quiz-title-md — Figma Preset 3 · font-text level 3 · LH 120%
 .quiz-title-md {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-block-start: 0;
   color: $quiz-dark-blue;
   font-family: $font-family-text;
 
@@ -186,8 +186,8 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
 
 // quiz-title-sm — Figma Preset 4 (title-sm) · font-text level 5 · LH 100%
 %quiz-title-sm {
-  margin-top: 0;
-  padding-top: 0;
+  margin-block-start: 0;
+  padding-block-start: 0;
   color: var(--element-main-text);
   font-family: $font-family-text;
 
@@ -217,8 +217,8 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
 
 // quiz-title-xs — between Preset 4 & Preset 5 scale · font-text level 6 · LH 150%
 .quiz-title-xs {
-  margin-top: 0;
-  padding-top: 0;
+  margin-block-start: 0;
+  padding-block-start: 0;
   color: $quiz-dark-black;
   font-family: $font-family-text;
 
@@ -275,8 +275,8 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
 
 // quiz-text-md — Figma Preset 5 Regular / Medium (--medium) · font-text level 9 · LH 150%
 %quiz-text-md {
-  margin-top: 0;
-  padding-top: 0;
+  margin-block-start: 0;
+  padding-block-start: 0;
   color: $quiz-dark-black;
   font-family: $font-family-text;
 
@@ -312,8 +312,8 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
 
 // quiz-text-sm — step below Preset 5 body · font-text level 10 · LH 150%
 .quiz-text-sm {
-  margin-top: 0;
-  padding-top: 0;
+  margin-block-start: 0;
+  padding-block-start: 0;
   color: $quiz-dark-black;
   font-family: $font-family-text;
 
@@ -340,8 +340,8 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
 
 // quiz-text-xs — extra small fluid · font-text level 11 · LH 150%
 %quiz-text-xs {
-  margin-top: 0;
-  padding-top: 0;
+  margin-block-start: 0;
+  padding-block-start: 0;
   color: $quiz-dark-black;
   font-family: $font-family-text;
 
@@ -371,8 +371,8 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
 
 // quiz-text-fixed-20px — Figma Preset 6 · fixed 20px (not fluid) · Rubik Italic · LH 150%
 .quiz-text-fixed-20px {
-  margin-top: 0;
-  padding-top: 0;
+  margin-block-start: 0;
+  padding-block-start: 0;
   color: $quiz-dark-black;
   font-family: $font-family-text;
   font-size: 1.25rem; // 20px at 16px root — scales with user font settings
@@ -398,8 +398,8 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
 
 // quiz-text-xxs — smallest fluid step · font-text level 12 · LH 150% (no separate Figma “preset” sheet row; uses map 12)
 .quiz-text-xxs {
-  margin-top: 0;
-  padding-top: 0;
+  margin-block-start: 0;
+  padding-block-start: 0;
   color: $quiz-dark-black;
   font-family: $font-family-text;
 
