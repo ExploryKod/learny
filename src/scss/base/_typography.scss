@@ -375,7 +375,7 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
   padding-top: 0;
   color: $quiz-dark-black;
   font-family: $font-family-text;
-  font-size: 20px;
+  font-size: 1.25rem; // 20px at 16px root — scales with user font settings
   font-weight: $fw-normal;
   font-style: italic;
   letter-spacing: 0;
@@ -453,10 +453,6 @@ a {
       opacity: 1;
       text-transform: uppercase;
       color: $quiz-dark-black;
-
-      &.contact-link {
-        color: $quiz-neutral-bg;
-      }
     }
 
     /* quiz Links States */
@@ -466,36 +462,18 @@ a {
 
       @include media-breakpoint-up(lg) {
         opacity: 1;
-
-        &.contact-link {
-          color: $quiz-neutral-bg;
-        }
       }
     }
-
 
     &:visited {
       opacity: 1;
       color: $quiz-dark-black;
       text-decoration: underline;
-
-      @include media-breakpoint-up(lg) {
-        &.contact-link {
-          color: $quiz-neutral-bg;
-        }
-      }
     }
 
     &:hover {
       opacity: 1;
       text-decoration: underline;
-
-      @include media-breakpoint-up(lg) {
-
-        &.contact-link {
-          color: $quiz-neutral-bg;
-        }
-      }
     }
 
     &:focus,
@@ -504,12 +482,18 @@ a {
       color: $quiz-dark-black;
       text-decoration: underline;
       outline: none;
+    }
+  }
 
-      @include media-breakpoint-up(lg) {
-        &.contact-link {
-          color: $quiz-neutral-bg;
-        }
-      }
+  // Flat contact-link color (lg): one place, lower nesting / easier overrides than & .contact-link per pseudo
+  @include media-breakpoint-up(lg) {
+    &.quiz-text-link.contact-link,
+    &.quiz-text-link:link.contact-link,
+    &.quiz-text-link:visited.contact-link,
+    &.quiz-text-link:hover.contact-link,
+    &.quiz-text-link:focus.contact-link,
+    &.quiz-text-link:active.contact-link {
+      color: $quiz-neutral-bg;
     }
   }
 }

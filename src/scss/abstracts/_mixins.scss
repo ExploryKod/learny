@@ -54,8 +54,9 @@
 }
 
 @mixin icomoonFont {
-  // use !important to prevent issues with browser extensions that change fonts //
-  font-family: '#{$icomoon-font-family}' !important;
+  // !important: icon font must win over inherited text fonts (e.g. Rubik) on pseudo-elements
+  // stylelint-disable-next-line declaration-no-important
+  font-family: '#{$icomoon-font-family}', system-ui, sans-serif !important;
 
   // Better Font Rendering //
   -webkit-font-smoothing: antialiased;
