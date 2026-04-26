@@ -160,12 +160,14 @@
   $delta-size: $desktop-size - $mobile-size;
 
   @if $delta-size == 0 {
-    font-size: #{$desktop-size}px;
+    font-size: $desktop-size * 1px;
   } @else {
     font-size: clamp(
-      #{$mobile-size}px,
-      calc(#{$mobile-size}px + #{$delta-size} * ((100vw - #{$min-vw}) / #{$range-vw})),
-      #{$desktop-size}px
+      $mobile-size * 1px,
+      calc(
+        $mobile-size * 1px + $delta-size * 1px * (100vw - $min-vw) / $range-vw
+      ),
+      $desktop-size * 1px
     );
   }
 }

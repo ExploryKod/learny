@@ -16,7 +16,7 @@
       $mobile-size: map-get($text-sizes-mobile-array, $level);
       $vw-size: math.div(map-get($text-sizes-xl-array, $level) * 100, 1920);
 
-      font-size: clamp(#{$mobile-size}px, #{$vw-size}vw, #{$size}px);
+      font-size: clamp($mobile-size * 1px, $vw-size * 1vw, $size * 1px);
     }
   }
 }
