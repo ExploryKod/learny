@@ -1,0 +1,11 @@
+# This file lives at the root of the Git repo you push (the learny app). Do not
+# add a [build] base — there is no parent folder in the remote.
+# @netlify/angular-runtime: packagePath must be the Nx app folder (here: repo root).
+[build]
+  command = "pnpm run build"
+  publish = "dist/quizzy-front/browser"
+
+[[plugins]]
+  package = "@netlify/angular-runtime"
+  [plugins.inputs]
+  packagePath = "."
