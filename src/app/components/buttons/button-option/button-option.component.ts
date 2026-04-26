@@ -12,7 +12,7 @@ export interface ButtonOptionInterface {
   standalone: true,
   imports: [CommonModule, TranslateModule, MatIconModule],
   templateUrl: './button-option.component.html',
-  styleUrl: './button-option.component.scss',
+  styleUrls: ['./button-option.component.scss'],
 })
 export class ButtonOptionComponent {
   @Input() buttonOption: ButtonOptionInterface = {

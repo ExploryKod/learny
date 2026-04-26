@@ -21,7 +21,7 @@ export interface ButtonQuizAction {
   standalone: true,
   imports: [CommonModule, TranslateModule, MatIconModule],
   templateUrl: './button-quiz.component.html',
-  styleUrl: './button-quiz.component.scss',
+  styleUrls: ['./button-quiz.component.scss'],
 })
 export class ButtonQuizComponent {
   @Input() buttonQuiz: ButtonQuizInterface = {

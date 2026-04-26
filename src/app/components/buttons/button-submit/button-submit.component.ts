@@ -8,7 +8,7 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule, TranslateModule],
   templateUrl: './button-submit.component.html',
-  styleUrl: './button-submit.component.scss',
+  styleUrls: ['./button-submit.component.scss'],
 })
 export class ButtonSubmitComponent {
   @Input() label: string = '';

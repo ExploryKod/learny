@@ -7,7 +7,7 @@ import { isAppDefaultThemeDarkFromEnvironment } from '../../../theme/quiz-theme'
   standalone: true,
   imports: [CommonModule],
   templateUrl: './app-header.component.html',
-  styleUrl: './app-header.component.scss',
+  styleUrls: ['./app-header.component.scss'],
 })
 export class AppHeaderComponent {
   @Input() showQuizMeta = true;

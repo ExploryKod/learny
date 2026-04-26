@@ -18,7 +18,7 @@ import {
   imports: [RouterModule, AppHeaderComponent],
   selector: 'qzy-root',
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
   private readonly translateService = inject(TranslateService);

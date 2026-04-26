@@ -7,7 +7,7 @@ import { TranslateModule } from '@ngx-translate/core';
   standalone: true,
   imports: [CommonModule, TranslateModule],
   templateUrl: './quiz-score-card.component.html',
-  styleUrl: './quiz-score-card.component.scss',
+  styleUrls: ['./quiz-score-card.component.scss'],
 })
 export class QuizScoreCardComponent {
   @Input() quizTitle = '';

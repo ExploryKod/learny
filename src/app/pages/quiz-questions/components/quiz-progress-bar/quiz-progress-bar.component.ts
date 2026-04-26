@@ -4,7 +4,7 @@ import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
   selector: 'qzy-quiz-progress-bar',
   standalone: true,
   templateUrl: './quiz-progress-bar.component.html',
-  styleUrl: './quiz-progress-bar.component.scss',
+  styleUrls: ['./quiz-progress-bar.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class QuizProgressBarComponent {

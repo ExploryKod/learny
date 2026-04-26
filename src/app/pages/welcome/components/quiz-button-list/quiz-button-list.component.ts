@@ -8,7 +8,7 @@ import { Quiz } from '../../../../model/quiz';
   standalone: true,
   imports: [CommonModule, ButtonQuizComponent],
   templateUrl: './quiz-button-list.component.html',
-  styleUrl: './quiz-button-list.component.scss',
+  styleUrls: ['./quiz-button-list.component.scss'],
 })
 export class QuizButtonListComponent {
   @Input() quizzes: Quiz[] = [];

@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
   standalone: true,
   imports: [CommonModule, TranslateModule, QuizButtonListComponent],
   templateUrl: './welcome-page.component.html',
-  styleUrl: './welcome-page.component.scss',
+  styleUrls: ['./welcome-page.component.scss'],
 })
 export class WelcomePageComponent {
   private readonly quizService = inject(QuizService);

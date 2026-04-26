@@ -23,8 +23,8 @@ import { HeaderUiService } from '../../services/header-ui.service';
     QuizScoreCardComponent,
     QuizProgressBarComponent,
   ],
-  templateUrl: './quiz-questions.components.html',
-  styleUrl: './quiz-questions.component.scss',
+  templateUrl: './quiz-questions.component.html',
+  styleUrls: ['./quiz-questions.component.scss'],
 })
 export class QuizQuestionsComponent implements OnInit, OnDestroy {
   private readonly route = inject(ActivatedRoute);

@@ -23,7 +23,7 @@ export interface QuizAnswerOption {
   standalone: true,
   imports: [CommonModule, TranslateModule, ButtonOptionComponent],
   templateUrl: './quiz-options-list.component.html',
-  styleUrl: './quiz-options-list.component.scss',
+  styleUrls: ['./quiz-options-list.component.scss'],
 })
 export class QuizOptionsListComponent implements OnChanges {
   @Input({ required: true }) quizId = '';
