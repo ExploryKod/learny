@@ -1,6 +1,8 @@
-# Site root = this repo (learny). Nx `project.json` is at the root → packagePath = "."
-# If you also enabled @netlify/angular-runtime in the Netlify UI, remove it there so
-# the plugin is not registered twice; this file is the source of truth.
+# Learny = repo root. Static Angular CSR: build output + SPA fallback.
+# @netlify/angular-runtime 3.x declares no netlify.toml inputs; do not add packagePath
+# (Netlify will reject it). For this app, the plugin is unnecessary — remove
+# @netlify/angular-runtime from the Netlify UI “Build plugins” if it is still enabled
+# (it only matters for Netlify’s Angular SSR / server integration).
 
 [build]
   command = "pnpm run build"
@@ -10,8 +12,3 @@
   from = "/*"
   to = "/index.html"
   status = 200
-
-[[plugins]]
-  package = "@netlify/angular-runtime"
-  [plugins.inputs]
-    packagePath = "."
