@@ -157,8 +157,6 @@
   @if $delta-size == 0 {
     font-size: $desktop-size * 1px;
   } @else {
-    // Unitless tokens on the element; middle term is `number * length` (valid), not `px * (100vw - …)`.
-    // Global fluid band: `--qzy-font-*` in `_root.scss`. No `#{}` inside `clamp()` (stylelint).
     --qzy-fs-min: #{$mobile-size};
     --qzy-fs-max: #{$desktop-size};
     --qzy-fs-delta: #{$delta-size};
