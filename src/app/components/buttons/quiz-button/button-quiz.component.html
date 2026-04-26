@@ -1,17 +1,19 @@
 <div class="button-quiz" [class.button-quiz--with-actions]="visibleActions.length > 0">
-  <button
-    type="button"
-    class="button-quiz__main"
-    [disabled]="hasActions"
-    (click)="onButtonClick()">
-    <div class="button-quiz__content">
-      <span class="button-quiz__icon" [ngClass]="iconBadgeClass">
-        <img [src]="buttonQuiz.icon" alt="" aria-hidden="true" />
+  <div class="button-quiz__main">
+    <button
+      type="button"
+      class="button-quiz__primary"
+      [disabled]="hasActions"
+      (click)="onButtonClick()">
+      <span class="button-quiz__content">
+        <span class="button-quiz__icon" [ngClass]="iconBadgeClass">
+          <img [src]="buttonQuiz.icon" alt="" aria-hidden="true" />
+        </span>
+        <span class="button-quiz__text">
+          {{ buttonQuiz.title }}
+        </span>
       </span>
-      <span class="button-quiz__text">
-        {{ buttonQuiz.title }}
-      </span>
-    </div>
+    </button>
     <div class="button-quiz__actions">
       @if (visibleActions.length > 0) {
         @for (action of visibleActions; track action.key) {
@@ -25,5 +27,5 @@
         }
       }
     </div>
-  </button>
+  </div>
 </div>

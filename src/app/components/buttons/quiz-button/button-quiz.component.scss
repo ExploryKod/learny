@@ -15,9 +15,7 @@
     min-width: 100%;
     padding: 24px;
     background-color: var(--element-button-quiz);
-    border: none;
     border-radius: 24px;
-    cursor: pointer;
     box-shadow: var(--element-quiz-box-shadow);
     transition: box-shadow 0.3s ease, transform 0.3s ease;
     display: flex;
@@ -26,15 +24,35 @@
     flex: 1;
 
     &:hover,
-    &:focus,
+    &:focus-within,
     &:active {
       box-shadow: rgba(0, 0, 0, 0.2) 0px 2.5px 8.5px;
       transform: translateY(-0.8px);
     }
 
+    @include bp.media-breakpoint-up(lg) {
+      min-width: 40rem;
+    }
+  }
+
+  &__primary {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    border-radius: 0.8rem;
+
     &:disabled {
       cursor: default;
-      transform: none;
     }
   }
 
@@ -43,12 +61,6 @@
     align-items: center;
     min-width: 0;
     flex: 1;
-  }
-
-  @include bp.media-breakpoint-up(lg) {
-    &__main {
-      min-width: 40rem;
-    }
   }
 
   &__icon {
@@ -127,7 +139,7 @@
     align-items: center;
 
     .button-quiz__main:hover,
-    .button-quiz__main:focus,
+    .button-quiz__main:focus-within,
     .button-quiz__main:active {
       box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
       transform: none;
