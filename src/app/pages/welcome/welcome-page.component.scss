@@ -22,7 +22,7 @@
       flex-direction: row;
       flex-wrap: wrap;
       align-items: flex-start;
-      column-gap: 5rem;
+      column-gap: var(--element-space-welcome-intro-column-gap); 
       row-gap: 0;
     }
   }

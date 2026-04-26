@@ -156,7 +156,7 @@ $quiz-element-spaces: (
   ),
   'welcome-intro-column-gap': (
     default: map-get($quiz-spaces, '400'),
-    lg: map-get($quiz-spaces, '1000')
+    lg: map-get($quiz-spaces, '1600')
   ),
   'welcome-intro-row-gap': (
     default: map-get($quiz-spaces, '200')
