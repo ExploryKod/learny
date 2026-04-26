@@ -27,7 +27,7 @@ body.page-home, body.page-join, body.page-my-quizzes, body.page-quiz-questions {
   background-color: var(--grey-50);
   background-image: url('/assets/patterns/pattern-background-mobile-light.svg');
   background-repeat: no-repeat;
-  background-position: center top;
+  background-position: left top;
 }
 
 body.quiz-theme-dark.page-home,
@@ -38,12 +38,13 @@ body.quiz-theme-dark.page-quiz-questions {
   background-image:
     url('/assets/patterns/pattern-background-mobile-dark.svg'),
     linear-gradient(rgb(49 53 81 / 45%), rgb(49 53 81 / 45%));
+  background-position: left top;
 }
 
 @include bp.media-breakpoint-up(md) {
   body.page-home, body.page-join, body.page-my-quizzes, body.page-quiz-questions {
     background-image: url('/assets/patterns/pattern-background-tablet-light.svg');
-    background-position: center center;
+    background-position: left top;
   }
 
   body.quiz-theme-dark.page-home,
@@ -53,12 +54,14 @@ body.quiz-theme-dark.page-quiz-questions {
     background-image:
       url('/assets/patterns/pattern-background-tablet-dark.svg'),
       linear-gradient(rgb(49 53 81 / 45%), rgb(49 53 81 / 45%));
+    background-position: left top;
   }
 }
 
 @include bp.media-breakpoint-up(lg) {
   body.page-home, body.page-join, body.page-my-quizzes, body.page-quiz-questions {
     background-image: url('/assets/patterns/pattern-background-desktop-light.svg');
+    background-position: top center;
   }
 
   body.quiz-theme-dark.page-home,
@@ -68,6 +71,7 @@ body.quiz-theme-dark.page-quiz-questions {
     background-image:
       url('/assets/patterns/pattern-background-desktop-dark.svg'),
       linear-gradient(rgb(49 53 81 / 45%), rgb(49 53 81 / 45%));
+    background-position: top center;
   }
 }
 

@@ -21,8 +21,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 0.8rem;
+    gap: 16px;
     width: 100%;
+
+    @include bp.media-breakpoint-up(sm) {
+      gap: 24px;
+    }
   }
 
   &__header-icon {

@@ -81,6 +81,7 @@ $quiz-spaces: (
   '300': 24px,
   '400': 32px,
   '500': 40px,
+  '550': 56px,
   '600': 48px,
   '800': 64px,
   '1000': 80px,
@@ -131,8 +132,8 @@ $quiz-element-spaces: (
     default: map-get($quiz-spaces, '1000')
   ),
   'header-padding-y': (
-    default: 56px,
-    sm: 47px,
+    default: map-get($quiz-spaces, '500'),
+    sm: map-get($quiz-spaces, '550'),
     lg: map-get($quiz-spaces, '1200')
   ),
   'header-padding-y-with-meta': (
