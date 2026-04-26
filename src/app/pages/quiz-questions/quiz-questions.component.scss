@@ -1,8 +1,8 @@
 @use 'scss/abstracts/responsive' as bp;
 @use 'scss/abstracts/mixins' as mx;
 @use 'scss/abstracts/variables' as *;
-@use 'scss/base/typography' as typo;
-@use 'scss/base/buttons' as btn;
+@use 'scss/base/typography' as *;
+@use 'scss/base/buttons' as *;
 
 .quiz-questions {
   max-width: 1440px;
@@ -60,7 +60,7 @@
     }
 
     &--completed {
-      @extend .quiz-text-xl;
+      @extend %quiz-text-xl;
       font-size: 36px;
       display: block;
       line-height: 1.2;
@@ -93,13 +93,13 @@
   }
 
   &__submit-button {
-     @extend .simple-button;
+     @extend %simple-button;
      margin-top: var(--element-space-question-submit-margin-top);
      min-height: 5.6rem;
   }
 
   &__empty-state {
-    @extend .quiz-text-md;
+    @extend %quiz-text-md;
     font-style: italic;
     margin: 0;
   }

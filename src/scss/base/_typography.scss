@@ -185,7 +185,7 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
 }
 
 // quiz-title-sm — Figma Preset 4 (title-sm) · font-text level 5 · LH 100%
-.quiz-title-sm {
+%quiz-title-sm {
   margin-top: 0;
   padding-top: 0;
   color: var(--element-main-text);
@@ -209,6 +209,10 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
   &.--uppercase {
     text-transform: uppercase;
   }
+}
+
+.quiz-title-sm {
+  @extend %quiz-title-sm;
 }
 
 // quiz-title-xs — between Preset 4 & Preset 5 scale · font-text level 6 · LH 150%
@@ -241,7 +245,7 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
 
 /*** quiz CUSTOM TEXTS ***/
 // quiz-text-xl — Figma Preset 3 body/lead scale · font-text level 7 · LH 120% · Rubik Light default
-.quiz-text-xl {
+%quiz-text-xl {
   color: $quiz-dark-black;
   font-family: $font-family-text;
 
@@ -263,11 +267,14 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
   &.--uppercase {
     text-transform: uppercase;
   }
+}
 
+.quiz-text-xl {
+  @extend %quiz-text-xl;
 }
 
 // quiz-text-md — Figma Preset 5 Regular / Medium (--medium) · font-text level 9 · LH 150%
-.quiz-text-md {
+%quiz-text-md {
   margin-top: 0;
   padding-top: 0;
   color: $quiz-dark-black;
@@ -297,7 +304,10 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
   &.--uppercase {
     text-transform: uppercase;
   }
+}
 
+.quiz-text-md {
+  @extend %quiz-text-md;
 }
 
 // quiz-text-sm — step below Preset 5 body · font-text level 10 · LH 150%
@@ -329,7 +339,7 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
 }
 
 // quiz-text-xs — extra small fluid · font-text level 11 · LH 150%
-.quiz-text-xs {
+%quiz-text-xs {
   margin-top: 0;
   padding-top: 0;
   color: $quiz-dark-black;
@@ -353,6 +363,10 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
   &.--uppercase {
     text-transform: uppercase;
   }
+}
+
+.quiz-text-xs {
+  @extend %quiz-text-xs;
 }
 
 // quiz-text-fixed-20px — Figma Preset 6 · fixed 20px (not fluid) · Rubik Italic · LH 150%

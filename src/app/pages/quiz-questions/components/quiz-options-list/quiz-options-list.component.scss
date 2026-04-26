@@ -20,7 +20,7 @@
   }
 
   &__submit-button {
-   @extend .simple-button;
+   @extend %simple-button;
    margin-top: var(--element-space-question-submit-margin-top);
    width: 100%;
   }
@@ -63,7 +63,7 @@
   }
 
   &__feedback-text {
-    @extend .quiz-text-xs;
+    @extend %quiz-text-xs;
     color: inherit;
     text-align: center;
   }
