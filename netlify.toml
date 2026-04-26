@@ -1,11 +1,13 @@
-# This file lives at the root of the Git repo you push (the learny app). Do not
-# add a [build] base — there is no parent folder in the remote.
-# @netlify/angular-runtime: packagePath must be the Nx app folder (here: repo root).
+# Static deploy of the Angular `browser` bundle. No @netlify/angular-runtime
+# plugin: v3.x does not declare `packagePath` (or any) inputs, and the runtime is
+# mainly for Netlify + Angular SSR. Clear any plugin inputs in the Netlify UI
+# (Site settings → Build & deploy) if the plugin is still installed there.
 [build]
   command = "pnpm run build"
   publish = "dist/quizzy-front/browser"
 
-[[plugins]]
-  package = "@netlify/angular-runtime"
-  [plugins.inputs]
-  packagePath = "."
+# Angular client-side routing: serve index.html for unknown paths
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
