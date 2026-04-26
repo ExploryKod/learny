@@ -1,7 +1,6 @@
 // -----------------------------------------------------------------------------
 // This file contains all application-wide Sass mixins.
 // -----------------------------------------------------------------------------
-@use 'sass:math';
 @use 'variables' as *;
 
 /// Event wrapper
@@ -152,22 +151,21 @@
 
   $desktop-size: map-get($text-sizes-xl-array, $size);
   $mobile-size: map-get($text-sizes-mobile-array, $size);
-  // Use a realistic interpolation window so desktop size is reached on common laptop/tablet widths,
-  // not only near ultra-wide screens.
-  $min-vw: 375px;
-  $max-vw: 1024px;
-  $range-vw: math.div($max-vw - $min-vw, 1px);
   $delta-size: $desktop-size - $mobile-size;
 
   @if $delta-size == 0 {
     font-size: $desktop-size * 1px;
   } @else {
+    // Unitless tokens on the element; middle term is `number * length` (valid), not `px * (100vw - …)`.
+    // Global fluid band: `--qzy-font-*` in `_root.scss`. No `#{}` inside `clamp()` (stylelint).
+    --qzy-fs-min: #{$mobile-size};
+    --qzy-fs-max: #{$desktop-size};
+    --qzy-fs-delta: #{$delta-size};
+
     font-size: clamp(
-      $mobile-size * 1px,
-      calc(
-        $mobile-size * 1px + $delta-size * 1px * (100vw - $min-vw) / $range-vw
-      ),
-      $desktop-size * 1px
+      var(--qzy-fs-min) * 1px,
+      var(--qzy-fs-min) * 1px + var(--qzy-fs-delta) * (100vw - var(--qzy-font-fluid-min-vw)) / var(--qzy-font-fluid-range),
+      var(--qzy-fs-max) * 1px
     );
   }
 }

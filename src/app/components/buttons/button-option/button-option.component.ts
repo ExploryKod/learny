@@ -22,6 +22,8 @@ export class ButtonOptionComponent {
   @Input() isSelected = false;
   @Input() isCorrect = false;
   @Input() isIncorrect = false;
+  /** After a wrong answer: show the check icon on the truly correct option without green border. */
+  @Input() showCorrectResultIcon = false;
   @Input() disabled = false;
 
   @Output() buttonClick = new EventEmitter<void>();
@@ -34,11 +36,14 @@ export class ButtonOptionComponent {
   }
 
   get statusIconSrc(): string | null {
+    if (this.isIncorrect) {
+      return 'assets/icons/icon-incorrect.svg';
+    }
     if (this.isCorrect) {
       return 'assets/icons/icon-correct.svg';
     }
-    if (this.isIncorrect) {
-      return 'assets/icons/icon-incorrect.svg';
+    if (this.showCorrectResultIcon) {
+      return 'assets/icons/icon-correct.svg';
     }
     return null;
   }

@@ -51,6 +51,10 @@
   --border-radius-header: 3rem;
 
   --scrollbarsize: 17px;
+
+  /* Fluid `font-text` band: 375px→1024px maps to full desktop size (see _mixins font-text) */
+  --qzy-font-fluid-min-vw: 375px;
+  --qzy-font-fluid-range: 649;
 }
 
 @each $breakpoint, $value in $grid-breakpoints {

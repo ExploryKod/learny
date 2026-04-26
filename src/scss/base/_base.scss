@@ -37,7 +37,7 @@ body.quiz-theme-dark.page-quiz-questions {
   background-color: var(--page-bg, var(--blue-950));
   background-image:
     url('/assets/patterns/pattern-background-mobile-dark.svg'),
-    linear-gradient(rgb(49 53 81 / 45%), rgb(49 53 81 / 45%));
+    linear-gradient(rgb(49 62 81 / 45%), rgb(49 62 81 / 45%));
   background-position: left top;
 }
 
@@ -53,7 +53,7 @@ body.quiz-theme-dark.page-quiz-questions {
   body.quiz-theme-dark.page-quiz-questions {
     background-image:
       url('/assets/patterns/pattern-background-tablet-dark.svg'),
-      linear-gradient(rgb(49 53 81 / 45%), rgb(49 53 81 / 45%));
+      linear-gradient(rgb(49 62 81 / 45%), rgb(49 62 81 / 45%));
     background-position: left top;
   }
 }
@@ -70,7 +70,7 @@ body.quiz-theme-dark.page-quiz-questions {
   body.quiz-theme-dark.page-quiz-questions {
     background-image:
       url('/assets/patterns/pattern-background-desktop-dark.svg'),
-      linear-gradient(rgb(49 53 81 / 45%), rgb(49 53 81 / 45%));
+      linear-gradient(rgb(49 62 81 / 45%), rgb(49 62 81 / 45%));
     background-position: top center;
   }
 }
