@@ -1,8 +1,8 @@
 @use 'scss/abstracts/responsive' as bp;
 @use 'scss/abstracts/mixins' as mx;
 @use 'scss/abstracts/variables' as *;
-@use 'scss/base/typography' as typo;
-@use 'scss/base/buttons' as btn;
+@use 'scss/base/typography' as *;
+@use 'scss/base/buttons' as *;
 
 .quiz-questions {
   max-width: 1440px;
@@ -50,7 +50,9 @@
     }
   }
 
-  &__title {
+  // Fluid preset only when not on score card — same node has __title + __title--completed, and
+  // .quiz-questions &__title at sm beats .quiz-questions__title--completed on specificity otherwise.
+  &__title:not(.quiz-questions__title--completed) {
     @include mx.font-text(7, $fw-medium, 1.2);
     color: var(--element-main-text);
     margin-bottom: 0;
@@ -58,15 +60,29 @@
     @include bp.media-breakpoint-up(sm) {
       @include mx.font-text(3, $fw-medium, 1.2);
     }
+  }
 
-    &--completed {
-      @extend .quiz-text-xl;
-      font-size: 36px;
+  // Figma Text Preset 2 — “Completed / You scored” (not fluid clamp): 40px mobile, 64px sm+; LH 100%.
+  // First line: Light · second line (--strong): Medium (weights override global &__title-part below).
+  &__title--completed {
+    color: var(--element-main-text);
+    margin-bottom: 0;
+    display: block;
+    font-family: $font-family-text;
+    line-height: 1;
+    letter-spacing: 0;
+    font-size: 2.5rem;
+
+    @include bp.media-breakpoint-up(sm) {
+      font-size: 4rem;
+    }
+
+    .quiz-questions__title-part {
       display: block;
-      line-height: 1.2;
+      font-weight: $fw-light;
 
-      .quiz-questions__title-part {
-        display: block;
+      &--strong {
+        font-weight: $fw-medium;
       }
     }
   }
@@ -93,13 +109,13 @@
   }
 
   &__submit-button {
-     @extend .simple-button;
+     @extend %simple-button;
      margin-top: var(--element-space-question-submit-margin-top);
      min-height: 5.6rem;
   }
 
   &__empty-state {
-    @extend .quiz-text-md;
+    @extend %quiz-text-md;
     font-style: italic;
     margin: 0;
   }

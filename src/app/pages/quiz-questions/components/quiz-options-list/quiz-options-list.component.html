@@ -6,6 +6,7 @@
         [isSelected]="isSelected(answer)"
         [isCorrect]="isCorrect(answer)"
         [isIncorrect]="isIncorrect(answer)"
+        [showCorrectResultIcon]="showCorrectAnswerIconAfterWrong(answer)"
         [disabled]="isSubmitted"
         (buttonClick)="onAnswerClick(answer)"
       ></qzy-button-option>

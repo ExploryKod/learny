@@ -27,6 +27,9 @@
     --#{$color-name}: #{$value};
   }
 
+  // Semantic surface: same value as --white; use in new CSS for clarity / theming
+  --quiz-neutral-bg: var(--white);
+
   @each $color-name, $value in $quiz-element-colors {
     --element-#{$color-name}: #{$value};
   }
@@ -51,6 +54,10 @@
   --border-radius-header: 3rem;
 
   --scrollbarsize: 17px;
+
+  /* Fluid `font-text` band: 375px→1024px maps to full desktop size (see _mixins font-text) */
+  --qzy-font-fluid-min-vw: 375px;
+  --qzy-font-fluid-range: 649;
 }
 
 @each $breakpoint, $value in $grid-breakpoints {

@@ -20,8 +20,15 @@
     border-radius: 24px;
     cursor: pointer;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-    transition: box-shadow 0.3s ease, transform 0.3s ease;
     display: flex;
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
     align-items: center;
     justify-content: space-between;
     flex: 1;
@@ -155,9 +162,9 @@
   &--with-actions {
     align-items: center;
 
-    .button-quiz__main:hover,
-    .button-quiz__main:focus,
-    .button-quiz__main:active {
+    .button-option__main:hover,
+    .button-option__main:focus,
+    .button-option__main:active {
       box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
       transform: none;
     }

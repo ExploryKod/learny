@@ -16,7 +16,7 @@
       $mobile-size: map-get($text-sizes-mobile-array, $level);
       $vw-size: math.div(map-get($text-sizes-xl-array, $level) * 100, 1920);
 
-      font-size: clamp(#{$mobile-size}px, #{$vw-size}vw, #{$size}px);
+      font-size: clamp($mobile-size * 1px, $vw-size * 1vw, $size * 1px);
     }
   }
 }
@@ -58,9 +58,9 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
 /*** quiz CUSTOM TITLES ***/
 // quiz-title-xl — Figma Preset 1 (display) · font-text level 1 · LH 100% · Rubik Medium default
 .quiz-title-xl {
-  margin-top: 0;
-  margin-bottom: $quiz-title-xl-mb;
-  padding-top: 0;
+  margin-block-start: 0;
+  margin-block-end: $quiz-title-xl-mb;
+  padding-block-start: 0;
   color: $quiz-dark-blue;
   font-family: $font-family-title;
 
@@ -94,7 +94,7 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
   .main {
     &__#{$class} {
       .quiz-title-xl {
-        margin-bottom: #{$value};
+        margin-block-end: #{$value};
       }
     }
   }
@@ -102,9 +102,9 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
 
 // quiz-title-lg — Figma Preset 2 Medium · font-text level 2 · LH 100%
 .quiz-title-lg {
-  margin-top: 0;
-  margin-bottom: $quiz-title-xl-mb;
-  padding-top: 0;
+  margin-block-start: 0;
+  margin-block-end: $quiz-title-xl-mb;
+  padding-block-start: 0;
   color: $quiz-dark-blue;
   font-family: $font-family-title;
 
@@ -136,12 +136,12 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
 @include media-breakpoint-down(lg) {
   .main {
     .quiz-title-xl {
-      margin-top: $max-lg-quiz-title-xl-mt-intro;
+      margin-block-start: $max-lg-quiz-title-xl-mt-intro;
     }
   }
   .legal, .confidentiality {
     .quiz-title-lg {
-      margin-top: $max-lg-quiz-title-lg-mt-legal;
+      margin-block-start: $max-lg-quiz-title-lg-mt-legal;
     }
   }
 }
@@ -149,7 +149,7 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
 @include media-breakpoint-up(lg) {
   .legal,  .confidentiality {
     .quiz-title-lg {
-      margin-top: $lg-quiz-title-lg-mt-legal;
+      margin-block-start: $lg-quiz-title-lg-mt-legal;
     }
   }
 }
@@ -158,9 +158,9 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
 
 // quiz-title-md — Figma Preset 3 · font-text level 3 · LH 120%
 .quiz-title-md {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-top: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  padding-block-start: 0;
   color: $quiz-dark-blue;
   font-family: $font-family-text;
 
@@ -185,9 +185,9 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
 }
 
 // quiz-title-sm — Figma Preset 4 (title-sm) · font-text level 5 · LH 100%
-.quiz-title-sm {
-  margin-top: 0;
-  padding-top: 0;
+%quiz-title-sm {
+  margin-block-start: 0;
+  padding-block-start: 0;
   color: var(--element-main-text);
   font-family: $font-family-text;
 
@@ -211,10 +211,14 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
   }
 }
 
+.quiz-title-sm {
+  @extend %quiz-title-sm;
+}
+
 // quiz-title-xs — between Preset 4 & Preset 5 scale · font-text level 6 · LH 150%
 .quiz-title-xs {
-  margin-top: 0;
-  padding-top: 0;
+  margin-block-start: 0;
+  padding-block-start: 0;
   color: $quiz-dark-black;
   font-family: $font-family-text;
 
@@ -241,7 +245,7 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
 
 /*** quiz CUSTOM TEXTS ***/
 // quiz-text-xl — Figma Preset 3 body/lead scale · font-text level 7 · LH 120% · Rubik Light default
-.quiz-text-xl {
+%quiz-text-xl {
   color: $quiz-dark-black;
   font-family: $font-family-text;
 
@@ -263,13 +267,16 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
   &.--uppercase {
     text-transform: uppercase;
   }
+}
 
+.quiz-text-xl {
+  @extend %quiz-text-xl;
 }
 
 // quiz-text-md — Figma Preset 5 Regular / Medium (--medium) · font-text level 9 · LH 150%
-.quiz-text-md {
-  margin-top: 0;
-  padding-top: 0;
+%quiz-text-md {
+  margin-block-start: 0;
+  padding-block-start: 0;
   color: $quiz-dark-black;
   font-family: $font-family-text;
 
@@ -297,13 +304,16 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
   &.--uppercase {
     text-transform: uppercase;
   }
+}
 
+.quiz-text-md {
+  @extend %quiz-text-md;
 }
 
 // quiz-text-sm — step below Preset 5 body · font-text level 10 · LH 150%
 .quiz-text-sm {
-  margin-top: 0;
-  padding-top: 0;
+  margin-block-start: 0;
+  padding-block-start: 0;
   color: $quiz-dark-black;
   font-family: $font-family-text;
 
@@ -329,9 +339,9 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
 }
 
 // quiz-text-xs — extra small fluid · font-text level 11 · LH 150%
-.quiz-text-xs {
-  margin-top: 0;
-  padding-top: 0;
+%quiz-text-xs {
+  margin-block-start: 0;
+  padding-block-start: 0;
   color: $quiz-dark-black;
   font-family: $font-family-text;
 
@@ -355,13 +365,17 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
   }
 }
 
+.quiz-text-xs {
+  @extend %quiz-text-xs;
+}
+
 // quiz-text-fixed-20px — Figma Preset 6 · fixed 20px (not fluid) · Rubik Italic · LH 150%
 .quiz-text-fixed-20px {
-  margin-top: 0;
-  padding-top: 0;
+  margin-block-start: 0;
+  padding-block-start: 0;
   color: $quiz-dark-black;
   font-family: $font-family-text;
-  font-size: 20px;
+  font-size: 1.25rem; // 20px at 16px root — scales with user font settings
   font-weight: $fw-normal;
   font-style: italic;
   letter-spacing: 0;
@@ -384,8 +398,8 @@ quiz-flex-text-max-sm > idem mais jusqu'à la taille du viewport en sm
 
 // quiz-text-xxs — smallest fluid step · font-text level 12 · LH 150% (no separate Figma “preset” sheet row; uses map 12)
 .quiz-text-xxs {
-  margin-top: 0;
-  padding-top: 0;
+  margin-block-start: 0;
+  padding-block-start: 0;
   color: $quiz-dark-black;
   font-family: $font-family-text;
 
@@ -439,10 +453,6 @@ a {
       opacity: 1;
       text-transform: uppercase;
       color: $quiz-dark-black;
-
-      &.contact-link {
-        color: $quiz-neutral-bg;
-      }
     }
 
     /* quiz Links States */
@@ -452,36 +462,18 @@ a {
 
       @include media-breakpoint-up(lg) {
         opacity: 1;
-
-        &.contact-link {
-          color: $quiz-neutral-bg;
-        }
       }
     }
-
 
     &:visited {
       opacity: 1;
       color: $quiz-dark-black;
       text-decoration: underline;
-
-      @include media-breakpoint-up(lg) {
-        &.contact-link {
-          color: $quiz-neutral-bg;
-        }
-      }
     }
 
     &:hover {
       opacity: 1;
       text-decoration: underline;
-
-      @include media-breakpoint-up(lg) {
-
-        &.contact-link {
-          color: $quiz-neutral-bg;
-        }
-      }
     }
 
     &:focus,
@@ -490,12 +482,18 @@ a {
       color: $quiz-dark-black;
       text-decoration: underline;
       outline: none;
+    }
+  }
 
-      @include media-breakpoint-up(lg) {
-        &.contact-link {
-          color: $quiz-neutral-bg;
-        }
-      }
+  // Flat contact-link color (lg): one place, lower nesting / easier overrides than & .contact-link per pseudo
+  @include media-breakpoint-up(lg) {
+    &.quiz-text-link.contact-link,
+    &.quiz-text-link:link.contact-link,
+    &.quiz-text-link:visited.contact-link,
+    &.quiz-text-link:hover.contact-link,
+    &.quiz-text-link:focus.contact-link,
+    &.quiz-text-link:active.contact-link {
+      color: $quiz-neutral-bg;
     }
   }
 }

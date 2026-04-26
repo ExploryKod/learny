@@ -54,9 +54,11 @@
   }
 
   $factor: calc(1 / ($max-breakpoint - $min-breakpoint) * ($max-value - $min-value));
-  $calc-value: unquote('#{$min-value - ($min-breakpoint * $factor)} + #{100vw * $factor}');
+  $lo: if($min-value > $max-value, $max-value, $min-value);
+  $hi: if($min-value > $max-value, $min-value, $max-value);
+  $middle: calc($min-value - $min-breakpoint * $factor + 100vw * $factor);
 
-  @return clamp(#{if($min-value > $max-value, $max-value, $min-value)}, #{$calc-value}, #{if($min-value > $max-value, $min-value, $max-value)});
+  @return clamp($lo, $middle, $hi);
 }
 
 // Get variables from object

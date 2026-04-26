@@ -113,6 +113,11 @@ export class QuizOptionsListComponent implements OnChanges {
     return this.isSubmitted && this.isSelected(answer) && !this.isAnswerCorrect;
   }
 
+  /** When the user submitted a wrong option, show only the check icon on the actually correct one. */
+  showCorrectAnswerIconAfterWrong(answer: QuizAnswerOption): boolean {
+    return this.isSubmitted && !this.isAnswerCorrect && answer.isCorrect;
+  }
+
   private getScoreStorageKey(): string {
     return this.scoreStorageKeyOverride ?? `quiz-score:${this.quizId}`;
   }

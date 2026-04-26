@@ -73,13 +73,13 @@
   }
 
   &__header-title {
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: $fw-medium;
     line-height: 1;
     color: var(--element-main-text);
 
     @include bp.media-breakpoint-up(md) {
-      font-size: 28px;
+      font-size: 1.75rem;
     }
   }
 
@@ -94,19 +94,19 @@
   }
 
   &__score-value {
-    font-size: 88px;
+    font-size: 5.5rem;
     font-weight: $fw-medium;
     line-height: 1;
     color: var(--element-main-text);
     text-align: center;
 
     @include bp.media-breakpoint-up(md) {
-      font-size: 144px;
+      font-size: 9rem;
     }
   }
 
   &__total {
-    @extend .quiz-title-sm;
+    @extend %quiz-title-sm;
     color: var(--element-text-muted);
     text-align: center;
 
